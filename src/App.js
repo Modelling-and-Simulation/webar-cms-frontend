@@ -6,6 +6,8 @@ import PersistLogin from "./components/PersistLogin";
 import { Routes, Route } from "react-router-dom";
 import Login from "./screens/auth/Login";
 import RequireAuth from "./components/RequireAuth";
+import "./css/App.css"
+import Register from "./screens/auth/Register";
 
 const ROLES = {
   Admin: "Admin",
@@ -21,6 +23,7 @@ function App() {
         {/* public routes */}
         <Route path="login" element={<Login />} />
         <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="register" element={<Register />} />
 
         {/* protected routes */}
         <Route element={<PersistLogin />}>
