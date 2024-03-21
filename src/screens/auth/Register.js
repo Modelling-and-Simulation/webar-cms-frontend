@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Container from "@mui/material/Container";
 
 const Register = () => {
@@ -48,12 +49,15 @@ const Register = () => {
                             <button type="submit" className='btn'>Register</button>
                         </div>
                     </form>
+                    <div className="bottom-msg">
+                        Already registered? <Link to="/login"> Login </Link> here!
+                    </div>
                 </div>
                 <div className='register-right'>
                     <div>
                         <img className='img-container' src="./img/reg.png" alt="" />
                     </div>
-                    <div>
+                    <div className='slogan'>
                         "Dive into Creativity! 
                         Craft, Connect, Captivate.
                         Join Us - Your AR Adventure Awaits!"

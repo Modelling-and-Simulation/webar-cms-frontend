@@ -1,0 +1,36 @@
+.sidebar-container{
+    background-color: #3D2C8D;
+    width: 15vw;
+    height: 95vh;
+    margin: 0%;
+    position: fixed;
+}
+
+.logo-container{
+    padding: 2vw;
+}
+
+.logo-img{
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.bar-box, .bottom-bar-box, .admin-bottom-bar-box{
+    width: 15vw;
+    height: 6vh;
+    background-color: #1C0C5B;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 1vh;
+}
+
+.bottom-bar-box{
+    margin-top: 30vh;
+}
+
+.admin-bottom-bar-box{
+    margin-top: 40vh;
+}

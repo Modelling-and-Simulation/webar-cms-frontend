@@ -1,0 +1,75 @@
+.dashboard-container{
+    margin-left: 18vw;
+}
+
+.graph-container{
+    background-color: #1C0C5B;
+    width: 70vw;
+    height: 60vh;
+    padding: 2vw;
+    color: white;
+    font-size: large;
+    margin-top: 2vh;
+}
+
+.graph-1{
+    margin: 2vw;
+    width: 60vw;
+    height: 40vh;
+}
+
+table {
+    border: 2px solid #1C0C5B;
+    width: 75vw;
+    min-height: 80vh;
+}
+ 
+th {
+    border-bottom: 1px solid black;
+}
+ 
+td {
+    text-align: center;
+}
+
+.admin-staff-pg{
+    margin-top: 0%;
+    margin-left: 15vw;
+}
+
+.admin-staff-pg h2{
+    display: flex;
+    justify-content: center;
+}
+
+.add-staff-btn-container{
+    justify-content: end;
+    display: flex;
+    margin-right: 5vw;
+}
+
+.admin-table-container{
+    margin-left: 2vw;
+    width: 80vw;
+    padding: 2vw;
+}
+
+.add-staff-container{
+    margin-left: 2vw;
+    padding: 2vh;
+}
+
+.add-staff-container h2{
+    justify-content: center;
+    display: flex;
+}
+
+.staff-label label{
+    width: 8vw;
+    margin-right: 1vw;
+}
+
+.profile-details{
+    margin-top: 1vh;
+}
+

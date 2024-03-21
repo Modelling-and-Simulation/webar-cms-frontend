@@ -1,6 +1,16 @@
 body {
-    background-color: #c996cc;
-    margin: 0; /* Remove default margin */
+    /* background-color: #c996cc; */
+    background-color: #E6E6E6;
+    margin: 0; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.slogan{
+    width: 10vw;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    align-content: center;
 }
 
 .register-container {
@@ -9,32 +19,105 @@ body {
     height: 100vh;
 }
 
+.register-right {
+    background-color: #c996cc;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+    padding: 20px;
+    margin-right: 0; 
+}
+
 .register-left {
-    /* flex: 1; */
     background-color: white;
     color: black;
-    width: 45vw;
+    width: 58vw;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 5vw; /* Added padding for better spacing */
+    padding: 5vw;
 }
 
 .register-left h3 {
     text-align: center;
-    margin-top: 0; /* Remove default margin for h3 */
+    margin-top: 0; 
 }
 
-.input-box {
+.login-container{
+    display: flex;
+    margin-right: 0%;
+    /* margin-left: 5vw; */
+    height: 100vh;
+}
+
+.login-right{
     background-color: white;
-    width: 80%;
+    color: black;
+    width: 55vw;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5vw;
+    margin-right: 0%;
+    /* margin-left: 10vw; */
+    float: right;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-right h3{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 4vh;
+}
+
+.login-form{
+    align-items: center;
+    padding: 0%;
+}
+
+.login-left{
+    background-color: #c996cc;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-right: 0; 
+}
+
+.login-input{
+    background-color: white;
+    width: 45vw;
     height: 40px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
+.input-box {
+    background-color: white;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 1vw;
+}
+
 .btn-container{
     align-items: center;
     justify-content: center;
+    display: flex;
+
+}
+
+.login-btn-container{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    margin-top: 5vh;
 }
 
 .btn {
@@ -44,17 +127,7 @@ body {
     height: 40px;
     background-color: #1c0c5b;
     border-radius: 10px;
-}
-
-.register-right {
-    /* flex: 1; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px; /* Added padding for better spacing */
-    margin: 0; /* Remove default margin */
+    cursor: pointer;
 }
 
 .img-container{
@@ -62,4 +135,24 @@ body {
     height: 50vh;
     justify-content: center;
     align-items: center;
+}
+
+.img-container-login{
+    width: 30vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    margin-left: 5vw;
+}
+
+.login-trust{
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-msg{
+    margin-top: 5vh;
+    justify-content: center;
+    display: flex;
 }

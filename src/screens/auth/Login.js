@@ -68,40 +68,66 @@ const Login = () => {
       <p ref={errRef} aria-live="assertive">
         {errMsg}
       </p>
-      <h1>Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          ref={userRef}
-          autoComplete="off"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-          required
-        />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          required
-        />
-        <button>Sign In</button>
-        <div>
-          <input
-            type="checkbox"
-            id="persist"
-            onChange={togglePersist}
-            checked={persist}
-          />
-          <label htmlFor="persist">Trust This Device</label>
+      {/* <h1>Sign In</h1> */}
+      <div className="login-container">
+        <div className="login-left">
+          <div>
+              <img className='img-container-login' src="./img/login.png" alt="" />
+          </div>
         </div>
-      </form>
+        <div className="login-right">
+          <h3>Welcome to Web AR!</h3>
+          <form onSubmit={handleSubmit} className="login-form">
+            <div>
+              <label htmlFor="username">Enter your username:</label>
+              <br />
+              <input
+                className="login-input"
+                type="text"
+                id="username"
+                ref={userRef}
+                autoComplete="off"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                required
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="password">Enter your password:</label><br />
+              <input
+                className="login-input"
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                required
+              />
+            </div>
+            
+            <div className="login-btn-container">
+                <button type="submit" className='btn'>Log in</button>
+            </div> <br />
+            <div className="login-trust">
+              <input
+                type="checkbox"
+                id="persist"
+                onChange={togglePersist}
+                checked={persist}
+              />
+              <label htmlFor="persist">Trust This Device</label>
+            </div>
+          </form>
 
-      <Link to="/register">Sign Up</Link>
+          <div className="bottom-msg">
+            Not registered yet? <Link to="/register">Join Us</Link> today!
+          </div>
+        </div>
+      </div>
+      
+      
+
+      
     </section>
   );
 };
