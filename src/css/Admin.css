@@ -5,7 +5,7 @@
 .graph-container{
     background-color: #1C0C5B;
     width: 70vw;
-    height: 60vh;
+    max-height: 50vh;
     padding: 2vw;
     color: white;
     font-size: large;

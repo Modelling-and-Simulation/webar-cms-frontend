@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from './customer-components/Sidebar';
 import '../../css/Customer.css';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const CreateURL = () => {
+    const [selectedImages, setSelectedImages] = useState([]);
+    const [availableImages, setAvailableImages] = useState([
+        { src: "./img/bugatti.jpg", alt: "bugatti" },
+        { src: "./img/house.jpg", alt: "house" },
+        { src: "./img/livingroom.png", alt: "living room" },
+    ]);
+
+    // Function to handle selecting an image
+    const handleSelectImage = (image) => {
+        setSelectedImages([...selectedImages, image]);
+        setAvailableImages(availableImages.filter(item => item.src !== image.src));
+    }
+
+    // Function to handle removing an image from the preview
+    const handleRemoveImage = (image) => {
+        setSelectedImages(selectedImages.filter(item => item.src !== image.src));
+        setAvailableImages([...availableImages, image]);
+    }
+
     return (
         <div>
             <Sidebar />
@@ -15,27 +34,18 @@ const CreateURL = () => {
                             <button className='link-btn'>Create URL</button>
                         </div>
                         <div className='added-images'>
-                            <div className='url-preview-img-outer'>
-                                <div className='url-preview-img-container'>
-                                    <img className='url-preview-img' src="./img/bugatti.jpg" alt="" />
+                            {selectedImages.map((image, index) => (
+                                <div className='url-preview-img-outer' key={index}>
+                                    <div className='url-preview-img-container'>
+                                        <img className='url-preview-img' src={image.src} alt={image.alt} />
+                                        <div className='remove-overlay' onClick={() => handleRemoveImage(image)}>
+                                            <button className='remove-btn'>-</button>
+                                        </div>
+                                    </div>
+                                    <p>{image.alt}</p>
                                 </div>
-                                <p>bugatti</p>
-                            </div>
-                            <div className='url-preview-img-outer'>
-                                <div className='url-preview-img-container'>
-                                    <img className='url-preview-img' src="./img/livingroom.png" alt="" />
-                                </div>
-                                <p>living room</p>
-                            </div>
-                            <div className='url-preview-img-outer'>
-                                <div className='url-preview-img-container'>
-                                    <img className='url-preview-img' src="./img/livingroom.png" alt="" />
-                                </div>
-                                <p>living room</p>
-                            </div>
+                            ))}
                         </div>
-                        
-                        
                     </div>
                     <div className='select-container'>
                         <div className='all-target-container'>
@@ -53,20 +63,13 @@ const CreateURL = () => {
                                 </div>
                             </div>
                             <div className='url-target'>
-                                <div className='target-img-container'>
-                                    <img className='target-img' src="./img/bugatti.jpg" alt="" />
-                                    <p>bugatti</p>
-                                </div>
-                                <div className='target-img-container'>
-                                    <img className='target-img' src="./img/house.jpg" alt="" />
-                                    <p>house</p>
-                                </div>  
-                                <div className='target-img-container'>
-                                    <img className='target-img' src="./img/bugatti.jpg" alt="" />
-                                    <p>bugatti</p>
-                                </div>
+                                {availableImages.map((image, index) => (
+                                    <div className='target-img-container' key={index} onClick={() => handleSelectImage(image)}>
+                                        <img className='target-img' src={image.src} alt={image.alt} />
+                                        <p>{image.alt}</p>
+                                    </div>
+                                ))}
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -75,4 +78,4 @@ const CreateURL = () => {
     );
 }
 
-export default CreateURL
+export default CreateURL;

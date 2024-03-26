@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from 'react';
 import '../../css/Admin.css'
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AdminSidebar from './admin-components/AdminSidebar';
 
-
 const AdminStaff = () => {
+    const [deleteIndex, setDeleteIndex] = useState(null);
+
+    const handleDelete = (index) => {
+        setDeleteIndex(index);
+    }
+
+    const handleDeleteConfirmed = () => {
+        // Implement your deletion logic here, using deleteIndex state
+        setDeleteIndex(null); // Reset deleteIndex state after deletion
+    }
+
     const data = [
         { Profile: "hh", Name: "Johnny", AddedDate: "1/1/2024" },
         { Profile: "Anom", Name: "Rose", AddedDate: "1/1/2024" },
         { Profile: "Anom", Name: "Wilhelm", AddedDate: "1/1/2024" },
         { Profile: "Anom", Name: "Wilhelm", AddedDate: "1/1/2024" },
-
-    ]
+    ];
 
     return (
         <div>
@@ -25,27 +34,43 @@ const AdminStaff = () => {
                 </div>
                 <div className="admin-table-container">
                     <table>
-                        <tr>
-                            <th>Profile</th>
-                            <th>Name</th>
-                            <th>Added Date</th>
-                            <th>Action</th>
-                        </tr>
-                        {data.map((val, key) => {
-                            return (
-                                <tr key={key}>
+                        <thead>
+                            <tr>
+                                <th>Profile</th>
+                                <th>Name</th>
+                                <th>Added Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((val, index) => (
+                                <tr key={index}>
                                     <td>{val.Profile}</td>
                                     <td>{val.Name}</td>
                                     <td>{val.AddedDate}</td>
-                                    <td><button className="btn-2">Remove</button></td>
+                                    <td>
+                                        <button className="btn-2" onClick={() => handleDelete(index)}>Remove</button>
+                                    </td>
                                 </tr>
-                            )
-                        })}
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             </div>
+
+            {deleteIndex !== null && (
+                <div className="delete-confirmation">
+                    <div className="confirmation-content">
+                        <p>Are you sure you want to remove this staff?</p>
+                        <div className="confirmation-buttons">
+                            <button className="btn-confirmation btn-yes" onClick={handleDeleteConfirmed}>Yes</button>
+                            <button className="btn-confirmation btn-no" onClick={() => setDeleteIndex(null)}>No</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
 
-export default AdminStaff
+export default AdminStaff;

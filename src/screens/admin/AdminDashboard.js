@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/Admin.css';
 import AdminSidebar from './admin-components/AdminSidebar';
+import DailyUsers from './admin-components/DailyUsers';
+import ContentTarget from './admin-components/ContentTarget';
 
 const AdminDashboard = () => {
     return (
@@ -11,13 +13,13 @@ const AdminDashboard = () => {
 
 
                 <div className='graph-container'>
-                    Daily Updates
-                    <img className='graph-1' src="./img/graph1.png" alt="" />
+                    Daily Users of the Year
+                    <DailyUsers />
                 </div>
 
                 <div className='graph-container'>
-                    Daily Uploads
-                    <img className='graph-1' src="./img/graph2.png" alt="" />
+                    Contents and Targets Comparison
+                    <ContentTarget />
                 </div>
             </div>
         </div>
